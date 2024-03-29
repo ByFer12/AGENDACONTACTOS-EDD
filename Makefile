@@ -2,7 +2,7 @@
 COMPILADOR = g++
 
 # Bandera de compilación
-BANDERA = -std=c++11 -Wall
+BANDERA = -std=c++11 -Wall -g
 
 # Directorio de los archivos de cabecera
 CARPETASCABECERA = cabeceros

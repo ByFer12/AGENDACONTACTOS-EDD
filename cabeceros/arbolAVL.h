@@ -203,6 +203,7 @@ public:
         // Llamar a dot para convertir el archivo DOT a PNG
         string comandoDot = "dot -Tpng " + nombreArchivo + ".dot -o " + nombreArchivo + ".png";
         system(comandoDot.c_str());
+        cout<<"Graficado correctamente: "<<endl;
     }
 
 template <typename T>
