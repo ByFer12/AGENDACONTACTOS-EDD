@@ -22,7 +22,7 @@ private:
     int elementos;
 
     int hash(const string &clave){
-        int valHash;
+        int valHash=0;
         for(char c: clave){
             valHash+=c;
         }

@@ -17,7 +17,7 @@ class secondHash{
     Contacto* contactos;
     int tamanio=5;
     int elementos;
-    static constexpr double FACTOR_CARGA2=0.6;
+    double FACTOR_CARGA2=0.6;
 
 
 
@@ -77,16 +77,16 @@ public:
     void setTamanio(int tam){
         tamanio=tam;
     }
-    void insertar(const string&claveee, arbolAVL<string>*arbol){
-         if(static_cast<double>(elementos)/tamanio>=FACTOR_CARGA2){
+    void insertar(const string&clave, arbolAVL<string>*arbol){
+         if(static_cast<double>(elementos/tamanio)>=FACTOR_CARGA2){
             reHashing();
         }
 
-        int posicion=hashing(claveee);
+        int posicion=hashing(clave);
         while (contactos[posicion].dato!=""){
             posicion=(posicion+1)%tamanio;
         }
-        contactos[posicion]={claveee,arbol};
+        contactos[posicion]={clave,arbol};
         ++elementos;   
 
     }

@@ -7,13 +7,12 @@
 #include <vector>
 using namespace std;
 entrada en;
-string ent;
 firstHash tabla1;
-secondHash tabla2;
-secondHash* tabla22=nullptr;
-int cantAtributos=datos.size();
 
-arbolAVL<string>*arbolll=nullptr;
+secondHash tabla;
+arbolAVL<string >arbol1;
+
+
 void crearGrupo();
 void crearContacto();
 void menu();
@@ -73,6 +72,7 @@ void menu(){
 }
 
 void crearGrupo(){
+            string ent;
             cout<<"\n\tEjemplo de comando: (ADD NEW-GROUP clientes FIELDS (nombre STRING, apellido STRING, celular INTEGER);)\n"<<endl;
             cout<<"Ingrese el comando para crear el nombre del grupo: ";
             getline(cin,ent);
@@ -83,14 +83,15 @@ void crearGrupo(){
                     cout<<"Datos: "<<dato<<endl;
                 }
             cout<<"Nombre del grupo--: "<<nombreGrupo<<endl;
-            tabla1.insertar(nombreGrupo,&tabla2);
+            tabla1.insertar(nombreGrupo,&tabla);
     //cin.ignore(1000,'\n');
 
-            cout<<"creando segunda tablas"<<endl;
+            cout<<"creando segunda tabla"<<endl;
             for (const string &dato:datos){
-                arbolAVL<string>arbol;
-                tabla2.insertar(dato,&arbol);
+                cout<<dato<<endl;
+                tabla.insertar(dato,&arbol1);
             }
+               
 
             cout<<"Tablas creadas correctamente";
 
@@ -101,22 +102,46 @@ void crearGrupo(){
 }
 
 void crearContacto(){
+    string ent;
     cout<<"\n\tEjemplo de comando: (ADD CONTACT IN amigos FIELDS (Pedro, Alvarez, 12345678, 02-05-1998);)\n"<<endl;
     cout<<"Ingrese el comando para crear el contacto: ";
     getline(cin,ent);
     en.entradaContactos(ent);
+    cout<<"Datos del contacto: "<<endl;
+
+    for (const string&dato:datosContacto) {
+        cout<<"Datos: "<<dato<<endl;
+    }
+
 
 }
-void prueba(){
+void prueba() {
     string hola;
-    cout<<"Ingrese el nombre del grupo a buscar: ";
-    cin>>hola;
-    tabla22=tabla1.buscar( hola);
-    arbolll=tabla22->buscar("nombre");
-    arbolll->insertar("byron");
-    arbolll->insertar("eddy");
-    arbolll->graficarArbol("ejemplo3");
+    cout << "Ingrese el nombre del grupo a buscar: ";
+    cin >> hola;
+    // Liberar memoria si ya hay un objeto asignado a tabla22
+
+    secondHash* tabla2 = tabla1.buscar(hola);
+    if (tabla2 != nullptr) {
+        cout << "Ingrese el nombre del atributo a buscar: ";
+        cin >> hola;
+        // Liberar memoria si ya hay un objeto asignado a arbolll
+
+        
+        arbolAVL<string>*arbol= tabla2->buscar(hola);
+        if (arbol != nullptr) {
+            cout << "Ingrese el nombre del contacto: ";
+            cin >> hola;
+            arbol->insertar(hola);
+            arbol->graficarArbol("ejemplo3");
+        } else {
+            cout << "No se encontró el atributo." << endl;
+        }
+    } else {
+        cout << "No se encontró el grupo." << endl;
+    }
 }
+
 
 
 
