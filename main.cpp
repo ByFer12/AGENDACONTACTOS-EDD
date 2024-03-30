@@ -94,7 +94,7 @@ void crearGrupo(){
 
             cout<<"Tablas creadas correctamente";
 
-           tabla1.buscar("clientes");
+          
 
                     
             
@@ -111,7 +111,11 @@ void prueba(){
     string hola;
     cout<<"Ingrese el nombre del grupo a buscar: ";
     cin>>hola;
-    cout<<"\nLo que aparecio fue:-> "<<tabla1.buscar( hola)<<endl;
+    tabla22=tabla1.buscar( hola);
+    arbolll=tabla22->buscar("nombre");
+    arbolll->insertar("byron");
+    arbolll->insertar("eddy");
+    arbolll->graficarArbol("ejemplo3");
 }
 
 
