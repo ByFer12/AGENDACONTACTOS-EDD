@@ -15,7 +15,9 @@ int cantAtributos=datos.size();
 
 arbolAVL<string>*arbolll=nullptr;
 void crearGrupo();
+void crearContacto();
 void menu();
+void prueba();
 
 
 int main(){
@@ -50,9 +52,14 @@ void menu(){
             break;
             case 2:
 
-                
+                crearContacto();
                 
             break;
+            case 3:
+
+                prueba();
+
+                break;
         
         default:
 
@@ -66,7 +73,7 @@ void menu(){
 }
 
 void crearGrupo(){
-            cout<<"\nEjemplo de comando: (ADD NEW-GROUP clientes FIELDS (nombre STRING, apellido STRING, celular INTEGER);)\n"<<endl;
+            cout<<"\n\tEjemplo de comando: (ADD NEW-GROUP clientes FIELDS (nombre STRING, apellido STRING, celular INTEGER);)\n"<<endl;
             cout<<"Ingrese el comando para crear el nombre del grupo: ";
             getline(cin,ent);
             
@@ -75,7 +82,7 @@ void crearGrupo(){
                 for (const string&dato:datos) {
                     cout<<"Datos: "<<dato<<endl;
                 }
-            cout<<"Nombre del grupo-: "<<nombreGrupo<<endl;
+            cout<<"Nombre del grupo--: "<<nombreGrupo<<endl;
             tabla1.insertar(nombreGrupo,&tabla2);
     //cin.ignore(1000,'\n');
 
@@ -86,39 +93,25 @@ void crearGrupo(){
             }
 
             cout<<"Tablas creadas correctamente";
-           
-            string entr1;
-            cout<<"Ingrese el grupo a buscar: ";
-            cin>>entr1;
-            tabla22=tabla1.buscar( entr1);
-            cout<<"a"<<endl;
-            cout<<tabla22<<endl;
-            if(tabla22!=nullptr){
 
-                arbolll=tabla22->buscar("nombre");
-            }else{
-                cout<<"La tabla esta vacia"<<endl;
-            }
-            //tabla22->saludar();
-            cout<<"B"<<endl;
-            if(arbolll!=nullptr){
-                      arbolll->insertar("byron");
-            cout<<"C"<<endl;
-            arbolll->insertar("fernando");
-            cout<<"D"<<endl;
-            arbolll->insertar("eddy");
-            cout<<"E"<<endl;
-            arbolll->insertar("santiago");
-            cout<<"F"<<endl;
-            arbolll->insertar("karla");
+           tabla1.buscar("clientes");
 
-            arbolll->buscar("karla");
-            arbolll->graficarArbol("ejemplo2");
-            }else{
-                cout<<"El arbol no existe: "<<endl;
-            }
                     
             
+}
+
+void crearContacto(){
+    cout<<"\n\tEjemplo de comando: (ADD CONTACT IN amigos FIELDS (Pedro, Alvarez, 12345678, 02-05-1998);)\n"<<endl;
+    cout<<"Ingrese el comando para crear el contacto: ";
+    getline(cin,ent);
+    en.entradaContactos(ent);
+
+}
+void prueba(){
+    string hola;
+    cout<<"Ingrese el nombre del grupo a buscar: ";
+    cin>>hola;
+    cout<<"\nLo que aparecio fue:-> "<<tabla1.buscar( hola)<<endl;
 }
 
 
