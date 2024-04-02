@@ -3,14 +3,21 @@
 
 #include <algorithm>
 #include <fstream>
+#include <vector>
+#include<sstream>
+#include <string>
+#include <filesystem>
+
 using namespace std;
 
 template <typename T>
 struct nodoArbol {
     T dato;
     int altura;
+    vector<string>conexionNodos;
     nodoArbol<T>* izquierda;
     nodoArbol<T>* derecha;
+    nodoArbol<T>*conexion;
 
  
 
@@ -21,9 +28,9 @@ template <typename T>
 class arbolAVL {
 private:
     nodoArbol<T>* raiz;
-
-    nodoArbol<T>* insertarNodo(nodoArbol<T>* nodo, const T& dato);
-    nodoArbol<T>* buscarNodo(nodoArbol<T>* nodo, const T& dato);
+    void conectarNodos(nodoArbol<T>* nodoEsteArbol, nodoArbol<T>* nodoOtroArbol);
+    nodoArbol<T>* insertarNodo(nodoArbol<T>* nodo, const T& dato,const vector<string>& datosEncontrados);
+    void buscarNodo(nodoArbol<T>* nodo, const T& dato, vector<nodoArbol<T>*>& nodosEncontrados);
     nodoArbol<T>* rotarDerecha(nodoArbol<T>* nodo);
     nodoArbol<T>* rotarIzquierda(nodoArbol<T>* nodo);
     int getAltura(nodoArbol<T>* nodo);
@@ -32,6 +39,7 @@ private:
     void eliminarNodos(nodoArbol<T>*nodo);
     void imprimirPrueba(nodoArbol<T>*nodo);
     void graficarNodo(nodoArbol<T>*nodo, ofstream& archivoDOT);
+    void exportarNodoAVL(nodoArbol<T>* nodo, const string& carpetaDestino);
 
 public:
     arbolAVL() : raiz(nullptr) {}
@@ -39,11 +47,13 @@ public:
         
         eliminarNodos(raiz);
     }
-
-    void insertar(const T& dato);
+    void insertarVector(const string&datos);
+    void conectarConOtroArbol(vector<arbolAVL<T>>& otrosArboles) ;
+    void insertar(const T& dato, const vector<string>& datosEncontrados);
     void buscar(const T& dato);
     void imprimir();
     void graficarArbol(const string&nombreArchivo);
+    void exportarArbol(const std::string& carpetaDestino);
 
 };
 
@@ -110,28 +120,32 @@ public:
         return nodo;
     }
 
+
     template <typename T>
-    nodoArbol<T>* arbolAVL<T>::insertarNodo(nodoArbol<T>* nodo, const T& dato) {
+    nodoArbol<T>* arbolAVL<T>::insertarNodo(nodoArbol<T>* nodo, const T& dato,const vector<string>& datosEncontrados) {
         if (nodo == nullptr) {
-            return new nodoArbol<T>(dato);
+            nodo = new nodoArbol<T>(dato);
+            nodo->conexionNodos = datosEncontrados;
+            return nodo;
         }
         if (dato < nodo->dato) {
-            nodo->izquierda = insertarNodo(nodo->izquierda, dato);
+            nodo->izquierda = insertarNodo(nodo->izquierda, dato,datosEncontrados);
         } else if (dato >= nodo->dato) {
-            nodo->derecha = insertarNodo(nodo->derecha, dato);
+            nodo->derecha = insertarNodo(nodo->derecha, dato,datosEncontrados);
         }
         return balancear(nodo);
     }
 
     template <typename T>
-    nodoArbol<T>* arbolAVL<T>::buscarNodo(nodoArbol<T>* nodo, const T& dato) {
-        if (nodo == nullptr || nodo->dato == dato) {
-            return nodo;
+    void arbolAVL<T>::buscarNodo(nodoArbol<T>* nodo, const T& dato, vector<nodoArbol<T>*>& nodosEncontrados) {
+        if (nodo == nullptr ) {
+            return;
         }
-        if (dato < nodo->dato) {
-            return buscarNodo(nodo->izquierda, dato);
-        }
-        return buscarNodo(nodo->derecha, dato);
+    if (nodo->dato == dato) {
+        nodosEncontrados.push_back(nodo);
+    }
+        buscarNodo(nodo->izquierda, dato, nodosEncontrados);
+        buscarNodo(nodo->derecha, dato, nodosEncontrados);
     }
     
     template <typename T>
@@ -151,6 +165,8 @@ public:
         }
         
     }
+
+
 
     template <typename T>
     void arbolAVL<T>::graficarNodo(nodoArbol<T>*nodo, ofstream& archivoDot){
@@ -177,8 +193,39 @@ public:
             }
 
     }
+    
+    template<typename T>
+    void arbolAVL<T>::exportarNodoAVL(nodoArbol<T>*nodo, const string&carpetaDestino){
+        if(nodo==nullptr){
+            return;
+        }
+        ostringstream nombreArchivo;
 
+        nombreArchivo<<carpetaDestino<<"/"<<nodo->dato<<".txt";
+        ofstream archivho(nombreArchivo.str());
+        if(archivho.is_open()){
+            for(const auto&dato:nodo->conexionNodos){
+                archivho<<dato<<" ";
+            }
+            archivho.close();
+        }else{
+            cerr<<"No se pudo abrir el archivo, hay problemas "<<nombreArchivo.str()<<endl;
+        }
+
+        exportarNodoAVL(nodo->izquierda, carpetaDestino);
+        exportarNodoAVL(nodo->derecha, carpetaDestino);
+    }
+
+    
     //METODOS PUBLICOS
+
+    template<typename T>
+    void arbolAVL<T>::exportarArbol(const string&nombreCarpeta){
+        if(!filesystem::exists(nombreCarpeta)){
+            filesystem::create_directory(nombreCarpeta);
+        }
+        exportarNodoAVL(raiz,nombreCarpeta);
+    }
 
     template<typename T>
     void arbolAVL<T>::imprimir(){
@@ -186,8 +233,8 @@ public:
     }
 
     template <typename T>
-    void arbolAVL<T>::insertar(const T& dato) {
-        raiz = insertarNodo(raiz, dato);
+    void arbolAVL<T>::insertar(const T& dato, const vector<string>& datosEncontrados) {
+        raiz = insertarNodo(raiz, dato,datosEncontrados);
     }
 
     template<typename T>
@@ -205,14 +252,28 @@ public:
         system(comandoDot.c_str());
         cout<<"Graficado correctamente: "<<endl;
     }
-
 template <typename T>
 void arbolAVL<T>::buscar(const T& dato) {
-    nodoArbol<T>* nodoEncontrado = buscarNodo(raiz, dato);
-    if (nodoEncontrado != nullptr) {
-        cout << "Valor encontrado: " << nodoEncontrado->dato << endl;
-    } else {
+    vector<nodoArbol<T>*> nodosEncontrados;
+    buscarNodo(raiz, dato, nodosEncontrados);
+
+    if (nodosEncontrados.empty()) {
         cout << "Valor no encontrado: " << dato << endl;
+    } else {
+        cout << "Datos encontrados: " << endl;
+        int contador = 1;
+        for (auto nodo : nodosEncontrados) {
+            cout << contador++ << ". " << nodo->dato << endl;
+            if (!nodo->conexionNodos.empty()) {
+                
+                for(const string& dato : nodo->conexionNodos){
+                    cout <<"\t"<< dato << " ";
+                }
+                cout << endl;
+            } else {
+                cout << "No se encontraron datos adicionales." << endl;
+            }
+        }
     }
 }
 

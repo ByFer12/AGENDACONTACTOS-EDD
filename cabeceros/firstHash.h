@@ -69,17 +69,19 @@ public:
         delete[]valores;
     }
 
-    void insertar(const string& clave, secondHash*valor){
+    secondHash* insertar(const string& clave){
+        
         if(static_cast<double>(elementos)/tamanio>=FACTOR_CARGA){
             reHashing();
         }
-
         int posicion=hash(clave);
         while (valores[posicion].clave!=""){
             posicion=(posicion+1)%tamanio;
         }
+        secondHash*valor=new secondHash();
         valores[posicion]={clave,valor};
-        ++elementos;     
+        ++elementos;
+        return valores[posicion].valor;     
     }
 
     secondHash* buscar(const string&clavee){
@@ -89,18 +91,20 @@ public:
             posicionn=(posicionn+1)%tamanio;
         }
         if(valores[posicionn].clave==clavee){
-            cout<<"hola"<<endl;
             return valores[posicionn].valor;
         }else{
             return nullptr;
         }
         
     }
+    void mostrarClaves() {
+        int index=0;
+    for (int i = 0; i < tamanio; ++i) {
+        if (valores[i].clave != "") {
+            index++;
+            cout << index<<". " << valores[i].clave << endl;
+        }
+    }
+}
 };
-
-
-
-
-
-
 #endif

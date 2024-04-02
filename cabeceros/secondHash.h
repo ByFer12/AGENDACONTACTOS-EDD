@@ -25,15 +25,14 @@ private:
 
 
     int hashing(const string&clave){
-        cout<<"adios"<<endl;
+
         int indice=0;
-        cout<<"adios2"<<endl;
+
         for (char c:clave){
-            cout<<"adios3"<<endl;
+
             indice+=c;
         }
-        cout<<"adios4"<<endl;
-        return indice%tamanio;        
+         return indice%tamanio;        
     }
 
     void reHashing(){
@@ -60,6 +59,7 @@ private:
         tamanio=newSize;    
     }
 public:
+    vector<string> atributos;
     secondHash(){
 
         contactos=new Contacto[tamanio];
@@ -86,24 +86,29 @@ public:
         while (contactos[posicion].dato!=""){
             posicion=(posicion+1)%tamanio;
         }
+        atributos.push_back(clave);
         contactos[posicion]={clave,arbol};
         ++elementos;   
 
     }
-    void saludar(){
-        cout<<"hola desde segunda tabla"<<endl;
+    int getTamanio(){
+        return tamanio;
+    }
+
+    const Contacto& getContacto(int indice)const{
+        return contactos[indice];
+    }
+    bool esVacio(int indice)const{
+        return contactos[indice].dato.empty();
     }
     
     arbolAVL<string>* buscar(const string&datoo){
         int posicionn=hashing(datoo);
-        cout<<"hols"<<endl;
         while ((contactos[posicionn].dato!="") && (contactos[posicionn].dato!=datoo))
         {
             posicionn=(posicionn+1)%tamanio;
         }
-        cout<<"hols2"<<endl;
         if(contactos[posicionn].dato==datoo){
-            cout<<"hols3"<<endl;
             return contactos[posicionn].arbolString;
         }else{
             return nullptr;
