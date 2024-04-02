@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "secondHash.h"
+#include <vector>
 using namespace std;
 #ifndef HASH_FRIST
 #define HASH_FRIST
@@ -55,6 +56,7 @@ private:
     }
 
 public:
+    vector<string>grupos;
     firstHash(){
         tamanio=TAMANIO;
         elementos=0;
@@ -98,13 +100,22 @@ public:
         
     }
     void mostrarClaves() {
-        int index=0;
-    for (int i = 0; i < tamanio; ++i) {
-        if (valores[i].clave != "") {
-            index++;
-            cout << index<<". " << valores[i].clave << endl;
+            int index=0;
+        for (int i = 0; i < tamanio; ++i) {
+            if (valores[i].clave != "") {
+                index++;
+                cout << index<<". " << valores[i].clave << endl;
+            }
         }
     }
-}
+        void mostrarClaves2() {
+        for (int i = 0; i < tamanio; ++i) {
+            if (valores[i].clave != "") {
+                grupos.push_back(valores[i].clave);
+                
+            }
+        }
+    }
+ 
 };
 #endif

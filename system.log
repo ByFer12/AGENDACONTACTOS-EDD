@@ -1,0 +1,198 @@
+[Tue Apr  2 08:53:43 2024
+] Sistema de contactos iniciado
+[Tue Apr  2 08:54:17 2024
+] Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 08:57:02 2024
+] Creando grupo: amigos con atributos: nombre apellido celular 
+[Tue Apr  2 08:57:22 2024
+] Contacto creado en grupo: amigos con los datos: Byron Fer 0000000 
+[Tue Apr  2 08:59:15 2024
+] Contacto creado en grupo: amigos con los datos: María López 3333333 
+[Tue Apr  2 08:59:28 2024
+] Exportando datos e informacion del grupo: amigos
+[Tue Apr  2 10:35:15 2024
+] Sistema de contactos iniciado
+[Tue Apr  2 11:12:25 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 11:12:36 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 11:12:53 2024
+]Creando grupo: amigos con atributos: nombre apellido celular 
+[Tue Apr  2 11:13:55 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 11:14:42 2024
+]Contacto creado en grupo: amigos con los datos: Byron Torres 66666 
+[Tue Apr  2 11:21:13 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 11:21:32 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 11:21:42 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 11:23:52 2024
+]Exportando datos e informacion del grupo: 2
+[Tue Apr  2 11:37:24 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 11:37:36 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 11:37:54 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 11:40:49 2024
+]Exportando datos e informacion del grupo: 2
+[Tue Apr  2 11:45:16 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 11:45:25 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 11:45:37 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 11:47:22 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 11:47:34 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 11:47:49 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 12:03:21 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 12:03:37 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 12:03:48 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 12:05:00 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 12:05:55 2024
+]Creando grupo:  con atributos: 
+[Tue Apr  2 12:07:13 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 12:07:55 2024
+]Contacto creado en grupo: clientes con los datos: pedro alvarez 1323423 
+[Tue Apr  2 12:08:49 2024
+]Exportando datos e informacion del grupo: 2
+[Tue Apr  2 12:21:31 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 12:21:42 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 12:21:51 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 12:23:26 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 12:23:37 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 12:23:45 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 12:25:09 2024
+]Creando grupo: amigos con atributos: nombre apellido celular 
+[Tue Apr  2 12:25:48 2024
+]Contacto creado en grupo: clientes con los datos: Byron Fer 0000000 
+[Tue Apr  2 12:29:18 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 12:29:30 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 12:32:35 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 12:34:43 2024
+]Valor alvarez buscado en el grupo: clientes
+[Tue Apr  2 12:41:07 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 12:41:18 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 12:41:43 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 12:42:15 2024
+]Valor alvarez buscado en el grupo: clientes
+[Tue Apr  2 12:42:37 2024
+]Valor Alvarez buscado en el grupo: clientes
+[Tue Apr  2 12:47:20 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 12:48:01 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 12:48:24 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 12:48:59 2024
+]Contacto creado en grupo: clientes con los datos: Byron Torres 111111111 
+[Tue Apr  2 12:49:34 2024
+]Valor alvarez buscado en el grupo: clientes
+[Tue Apr  2 12:50:32 2024
+]Contacto creado en grupo: clientes con los datos: Laura Gómez 1111111 
+[Tue Apr  2 12:51:13 2024
+]Valor alvarez buscado en el grupo: clientes
+[Tue Apr  2 12:51:52 2024
+]Valor Torres buscado en el grupo: clientes
+[Tue Apr  2 12:52:27 2024
+]Contacto creado en grupo: clientes con los datos: María Torres 3333333 
+[Tue Apr  2 12:52:49 2024
+]Valor Torres buscado en el grupo: clientes
+[Tue Apr  2 12:56:29 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 12:57:10 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 12:57:41 2024
+]Contacto creado en grupo: clientes con los datos: María Torres 3333333 
+[Tue Apr  2 12:57:55 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 12:58:13 2024
+]Contacto creado en grupo: clientes con los datos: Laura Gómez 1111111 
+[Tue Apr  2 12:58:24 2024
+]Creando grupo: amigos con atributos: nombre apellido celular 
+[Tue Apr  2 12:59:14 2024
+]Valor 11111111 buscado en el grupo: clientes
+[Tue Apr  2 12:59:57 2024
+]Valor 1111111 buscado en el grupo: clientes
+[Tue Apr  2 13:00:29 2024
+]Contacto creado en grupo: amigos con los datos: Ana Sánchez 5555555 
+[Tue Apr  2 13:05:45 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 13:05:56 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 13:07:10 2024
+]Creando grupo: amigos con atributos: nombre apellido celular 
+[Tue Apr  2 13:07:35 2024
+]Creando grupo: familia con atributos: nombre apellido celular 
+[Tue Apr  2 13:08:42 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 13:08:57 2024
+]Contacto creado en grupo: clientes con los datos: Laura Gómez 1111111 
+[Tue Apr  2 13:09:11 2024
+]Contacto creado en grupo: clientes con los datos: María López 3333333 
+[Tue Apr  2 13:09:22 2024
+]Contacto creado en grupo: clientes con los datos: fuego leña 6666666 
+[Tue Apr  2 13:09:51 2024
+]Contacto creado en grupo: amigos con los datos: Ana Sánchez 5555555 
+[Tue Apr  2 13:10:09 2024
+]Contacto creado en grupo: amigos con los datos: Carlos Martínez 4444444 
+[Tue Apr  2 13:10:35 2024
+]Valor alvarez buscado en el grupo: clientes
+[Tue Apr  2 13:10:48 2024
+]Valor Torres buscado en el grupo: clientes
+[Tue Apr  2 13:11:10 2024
+]Valor Alvarez buscado en el grupo: clientes
+[Tue Apr  2 13:30:42 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 13:30:52 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 13:31:03 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 
+[Tue Apr  2 13:31:15 2024
+]Creando grupo: amigos con atributos: nombre apellido celular 
+[Tue Apr  2 13:31:36 2024
+]Contacto creado en grupo: clientes con los datos: María López 3333333 
+[Tue Apr  2 13:32:05 2024
+]Contacto creado en grupo: amigos con los datos: María Torres 3333333 
+[Tue Apr  2 13:32:29 2024
+]Contacto creado en grupo: amigos con los datos: Carlos Martínez 4444444 
+[Tue Apr  2 13:36:25 2024
+]Creando grupo: familia con atributos: nombre apellido celular 
+[Tue Apr  2 13:37:13 2024
+]Contacto creado en grupo: familia con los datos: Byron ajxup 77777 
+[Tue Apr  2 13:38:16 2024
+]Valor alvarez buscado en el grupo: clientes
+[Tue Apr  2 13:38:52 2024
+]Exportando datos e informacion del grupo: clientes
+[Tue Apr  2 13:39:11 2024
+]Exportando datos e informacion del grupo: amigos
+[Tue Apr  2 13:40:53 2024
+]Exportando datos e informacion del grupo: familia
+[Tue Apr  2 14:23:08 2024
+]Sistema de contactos iniciado
+[Tue Apr  2 14:23:25 2024
+]Creando grupo: clientes con atributos: nombre apellido celular 
+[Tue Apr  2 14:23:46 2024
+]Contacto creado en grupo: clientes con los datos: Pedro Alvarez 12345678 

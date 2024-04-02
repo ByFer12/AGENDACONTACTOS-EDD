@@ -87,6 +87,7 @@ void entrada::buscarContacto(string &entrada) {
         nombreGrupo = coincidencias[1];
         nombreCampo = coincidencias[2];
         valorCampo = coincidencias[3];
+        cout<<"Valor Campo= "<<valorCampo<<endl;
 
         // Realizar la búsqueda del contacto en el grupo 'nombreGrupo' con el campo 'nombreCampo' y el valor 'valorCampo'
         // Aquí deberías implementar la lógica para buscar el contacto en función de los parámetros proporcionados
@@ -98,6 +99,8 @@ void entrada::buscarContacto(string &entrada) {
         cout << "Expresión no válida." << endl;
     }
 }
+
+
 
 
 

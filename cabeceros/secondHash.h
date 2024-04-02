@@ -16,7 +16,7 @@ struct Contacto
 class secondHash{
     Contacto* contactos;
     int tamanio=5;
-    int elementos;
+    
     double FACTOR_CARGA2=0.6;
 
 
@@ -59,6 +59,7 @@ private:
         tamanio=newSize;    
     }
 public:
+int elementos;
     vector<string> atributos;
     secondHash(){
 

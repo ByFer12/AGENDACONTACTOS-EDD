@@ -42,6 +42,7 @@ private:
     void exportarNodoAVL(nodoArbol<T>* nodo, const string& carpetaDestino);
 
 public:
+    int cantidadDatos;
     arbolAVL() : raiz(nullptr) {}
     ~arbolAVL() {
         
@@ -126,6 +127,7 @@ public:
         if (nodo == nullptr) {
             nodo = new nodoArbol<T>(dato);
             nodo->conexionNodos = datosEncontrados;
+            cantidadDatos++;
             return nodo;
         }
         if (dato < nodo->dato) {
@@ -258,12 +260,10 @@ void arbolAVL<T>::buscar(const T& dato) {
     buscarNodo(raiz, dato, nodosEncontrados);
 
     if (nodosEncontrados.empty()) {
-        cout << "Valor no encontrado: " << dato << endl;
+        cout << "\n\tValor no encontrado: " << dato << endl;
     } else {
-        cout << "Datos encontrados: " << endl;
-        int contador = 1;
+        cout << "\tDatos encontrados: \n" << endl;
         for (auto nodo : nodosEncontrados) {
-            cout << contador++ << ". " << nodo->dato << endl;
             if (!nodo->conexionNodos.empty()) {
                 
                 for(const string& dato : nodo->conexionNodos){
@@ -274,6 +274,7 @@ void arbolAVL<T>::buscar(const T& dato) {
                 cout << "No se encontraron datos adicionales." << endl;
             }
         }
+        cout<<"\tPresione enter para continuar"<<endl;
     }
 }
 
